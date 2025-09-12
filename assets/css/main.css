@@ -177,7 +177,7 @@ html {
 
 html,
 body {
-	background: #1c1d26;
+	background: #0d1117;
 }
 
 body.is-preload *,
@@ -401,7 +401,7 @@ pre code {
 	}
 
 	99% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: 100001;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -410,7 +410,7 @@ pre code {
 	}
 
 	100% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: -1;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -430,7 +430,7 @@ pre code {
 	}
 
 	99% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: 100001;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -439,7 +439,7 @@ pre code {
 	}
 
 	100% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: -1;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -459,7 +459,7 @@ pre code {
 	}
 
 	99% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: 100001;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -468,7 +468,7 @@ pre code {
 	}
 
 	100% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: -1;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -488,7 +488,7 @@ pre code {
 	}
 
 	99% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: 100001;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -497,7 +497,7 @@ pre code {
 	}
 
 	100% {
-		color: #1c1d26;
+		color: #0d1117;
 		z-index: -1;
 		-moz-transform: scale(0.5) rotate(360deg);
 		-webkit-transform: scale(0.5) rotate(360deg);
@@ -706,7 +706,7 @@ body.landing:after {
 	-webkit-animation: overlay-hide 1.5s ease-in forwards !important;
 	-ms-animation: overlay-hide 1.5s ease-in forwards !important;
 	animation: overlay-hide 1.5s ease-in forwards !important;
-	background: #1c1d26;
+	background: #0d1117;
 	content: '';
 	display: block;
 	height: 100%;
@@ -2384,7 +2384,7 @@ select {
 
 select option {
 	color: #ffffff;
-	background: #1c1d26;
+	background: #0d1117;
 }
 
 select:focus::-ms-value {
@@ -2579,12 +2579,12 @@ input[type="radio"]+label:before {
 }
 
 .icon.alt:before {
-	color: #1c1d26 !important;
+	color: #0d1117 !important;
 	text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
 }
 
 .icon.major {
-	background: #272833;
+	background: #0d1117;
 	border-radius: 100%;
 	cursor: default;
 	display: inline-block;
@@ -2617,7 +2617,7 @@ input[type="radio"]+label:before {
 }
 
 .icon.major.alt:before {
-	color: #272833 !important;
+	color: #0d1117 !important;
 	text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
 }
 
@@ -3201,9 +3201,11 @@ input[type="button"]:disabled,
 	-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
 	-ms-transition: -ms-transform 1s ease, opacity 1s ease;
 	transition: transform 1s ease, opacity 1s ease;
-	background: rgba(23, 24, 32, 0.95);
+	background: rgba(13, 17, 23, 0.85);
 	border-style: solid;
-	opacity: 1;
+	opacity: 1; 
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(10px); 
 	position: absolute;
 }
 
@@ -3477,7 +3479,7 @@ body.is-touch .spotlight {
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
-	background: #272833;
+	background: #0d1117;
 	content: '';
 	display: block;
 	height: 1em;
@@ -3498,7 +3500,7 @@ body.landing .dropotron.level-0 {
 }
 
 #header {
-	background: rgba(39, 40, 51, 0.965);
+	background: rgba(13, 17, 23, 0.95);
 	box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
 	cursor: default;
 	height: 3.5em;
@@ -3579,8 +3581,8 @@ body.landing #header {
 
 #banner {
 	background-attachment: fixed;
-	background-color: #272833;
-	background-image: url("../../images/banner.jpg");
+	background-color: #0d1117;
+	background-image: url("../../images/banner.png");
 	background-position: center center;
 	background-size: cover;
 	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3599,13 +3601,13 @@ body.landing #header {
 }
 
 #banner:after {
-	background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
+	background-image: -moz-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
 	;
-	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
+	background-image: -webkit-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
 	;
-	background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
+	background-image: -ms-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
 	;
-	background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
+	background-image: linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
 	;
 	content: '';
 	display: block;
@@ -3664,7 +3666,7 @@ body.is-touch #banner {
 /* Footer */
 
 #footer {
-	background: #272833;
+	background: #0d1117;
 	padding: 6em 0;
 	text-align: center;
 }
@@ -3687,7 +3689,7 @@ body.is-touch #banner {
 }
 
 #footer .icons .icon.alt:before {
-	color: #272833 !important;
+	color: #0d1117 !important;
 	text-shadow: 1px 0 0 rgba(255, 255, 255, 0.5), -1px 0 0 rgba(255, 255, 255, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
 }
 
@@ -3816,7 +3818,7 @@ body.is-touch #banner {
 	}
 
 	.spotlight .content {
-		background-color: #1c1d26;
+		background-color: #0d1117;
 		border-width: 0 !important;
 		border-top-width: 0.35em !important;
 		bottom: auto !important;
@@ -4034,7 +4036,7 @@ body.is-touch #banner {
 		top: 0;
 		width: 100%;
 		z-index: 10001;
-		background: #272833;
+		background: #0d1117;
 		box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
 	}
 
@@ -4112,7 +4114,7 @@ body.is-touch #banner {
 		top: 0;
 		width: 275px;
 		z-index: 10002;
-		background: #181920;
+		background: #10141b;
 		padding: 0.75em 1.25em;
 	}
 
