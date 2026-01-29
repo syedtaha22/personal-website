@@ -77,8 +77,8 @@
                 <header class="major">
                     <h2>Explore My Latest Projects</h2>
                     <p>
-                        Explore notable projects I've worked on, showcasing my skills in <strong>AI</strong>,
-                        <strong>machine learning</strong>, and <strong>software engineering</strong>.
+                        Explore my research and technical projects showcasing expertise in <strong>high-performance computing</strong>,
+                        <strong>systems optimization</strong>, and <strong>machine learning</strong>.
                     </p>
                 </header>
                 <div class="row gtr-150">
@@ -87,60 +87,30 @@
                         <!-- Sidebar -->
                         <section id="sidebar">
                             <section>
-                                <h3>Chess Engine</h3>
+                                <h3>Vectorized CNN Inference on RISC-V</h3>
                                 <p>
-                                    This chess engine, built in <strong>C++</strong>, utilizes sophisticated algorithms
-                                    to play chess effectively. It incorporates a minimax algorithm with alpha-beta
-                                    pruning for
-                                    optimal move decisions. The engine evaluates positions using heuristic functions and
-                                    supports various difficulty levels and custom settings. This project highlights
-                                    advanced
-                                    skills in data structures, algorithms, and performance optimization. Through
-                                    iterative
-                                    testing and refinement, this engine aims to provide a challenging and engaging
-                                    experience
-                                    for chess enthusiasts and players of all skill levels.
+                                    Implemented a complete Convolutional Neural Network in <strong>RISC-V assembly</strong>, 
+                                    leveraging the Vector Extension (RVV) to optimize edge computing workloads. Achieved a 
+                                    <strong>7.3x speedup</strong> in total inference time and <strong>12.2x reduction</strong> 
+                                    in convolution instructions through algorithmic redesign (im2col + GEMM) and FP16 
+                                    compression. Engineered a range-reduction algorithm for Softmax with 99.9% iteration 
+                                    reduction. <strong>Research paper under review</strong> in an academic journal.
                                 </p>
-                                <footer>
-                                    <ul class="actions">
-                                        <li><a href="https://github.com/syedtaha22/Chess-v5.0" class="button"
-                                                target="_blank">
-                                                View on GitHub
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </footer>
                             </section>
                             <hr />
 
                             <section>
-                                <a href="https://github.com/syedtaha22/GAN-Nebula-Generator" class="image fit"
-                                    target="_blank">
-                                    <img src="images/nebula.jpg" alt="Generated nebula image by GAN" />
+                                <a class="image fit">
+                                    <img src="images/othello_boards.png" alt="Othello match progression showing AI winning as black - board positions from left to right" />
                                 </a>
-                                <h3>GAN for Nebula Images</h3>
+                                <h3>High-Performance Othello AI</h3>
                                 <p>
-                                    This <strong>Generative Adversarial Network (GAN)</strong> generates high-quality
-                                    nebula images. Leveraging <strong>TensorFlow</strong> and <strong>Keras</strong>,
-                                    the
-                                    GAN consists of a generator for image creation and a discriminator for evaluating
-                                    authenticity. Through iterative training, the GAN produces stunning nebula visuals,
-                                    showcasing AI's potential in creative domains and deep learning expertise. This
-                                    project
-                                    involves advanced techniques in neural network training and image generation,
-                                    offering
-                                    insights into the power of GANs in producing realistic and artistic representations.
+                                    Developed a deep reinforcement learning AI integrating <strong>Monte Carlo Tree Search</strong> 
+                                    with optimized Convolutional Neural Networks for board evaluation and move prediction. 
+                                    Systematically optimized the CNN architecture, reducing model size by <strong>50%</strong> 
+                                    (85MB → 42.66MB) while increasing gameplay speed <strong>10x</strong> (1000ms → 100ms per move) 
+                                    and maintaining a >90% win rate against larger baselines through rigorous internal tournaments.
                                 </p>
-                                <footer>
-                                    <ul class="actions">
-                                        <li>
-                                            <a href="https://www.linkedin.com/posts/syetaha_recall-from-kindergarten-or-preschool-the-activity-7219487406800953344-enkZ"
-                                                class="button" target="_blank">
-                                                LinkedIn Post
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </footer>
                             </section>
                             <hr />
                         </section>
@@ -150,38 +120,76 @@
 
                         <!-- Content -->
                         <section id="content">
-                            <a href="#" class="image fit" style="border-radius: 10px;"><img src="images/flashai.png"
-                                    alt="FlashAI interface" /></a>
-                            <h3>FlashAI</h3>
+                            <a href="#" class="image fit" style="border-radius: 10px;"><img src="images/llm_performance_analysis.png"
+                                    alt="LLM performance analysis showing throughput scaling, speedup factor, and time distribution across thread counts" /></a>
+                            <h3>LLM Inference Optimization in xv6 Educational OS</h3>
                             <p>
-                                <a href="https://ai-flashcards-liart.vercel.app/"
-                                    target="_blank"><strong>FlashAI</strong></a> is a
-                                comprehensive website for generating flashcards, featuring AI-driven suggestions.
-                                Developed with <strong>Next.js</strong>, <strong>React</strong>, Material UI, and
-                                <strong>Firebase</strong>, it uses the OpenAI API for smart content generation.
-                                FlashAI simplifies study management and enhances learning efficiency. The application
-                                offers a seamless user experience, integrating
-                                modern web technologies to streamline flashcard generation and optimize study sessions.
-                                Through intuitive design and powerful backend functionality, FlashAI is a practical tool
-                                for learners.
+                                Engineered a <strong>POSIX-compliant Shared Memory (SHM) subsystem</strong> for the xv6 kernel 
+                                to enable zero-copy, persistent caching of Large Language Model weights (~100MB), eliminating 
+                                redundant network transfers. Implemented <strong>custom threading primitives from scratch</strong> 
+                                and <strong>parallelized the inference engine</strong>, achieving <strong>16.2 tokens/sec</strong> 
+                                (up from ~7 tokens/sec). Successfully ported the <strong>LLaMA-2 inference engine</strong> to xv6, 
+                                resolving system-level challenges and demonstrating comprehensive system building from kernel up to application layer.
+                                Documented the entire process in a comprehensive <strong>book</strong> explaining the methodology and implementation details.
                             </p>
                             <h4>Key Achievements:</h4>
                             <ul>
-                                <li>Created an intuitive UI using Next.js, React, and Material UI for a user-friendly
-                                    experience.</li>
-                                <li>Integrated Firebase for real-time data management and secure user authentication.
-                                </li>
-                                <li>Ensured mobile and desktop responsiveness to provide a consistent user experience
-                                    across devices.</li>
-                                <li>Implemented AI-based flashcard suggestions via the OpenAI API, enhancing study
-                                    session efficiency.</li>
-                                <li>Developed features for effective study management, aiming to optimize learning and
-                                    retention.</li>
+                                <li>Designed a cycle-accurate performance profiling library tracking call hierarchies, identifying matrix multiplication as the dominant bottleneck (87-92% of inference time).</li>
+                                <li>Reduced subsequent inference latency from ~80s to sub-second through zero-copy caching.</li>
+                                <li>Implemented custom threading primitives and parallelized inference, achieving 2.3x throughput improvement (7 → 16.2 tokens/sec).</li>
+                                <li>Resolved stack overflow issues via iterative quicksort and replaced Linux dependencies for minimal OS compatibility.</li>
                             </ul>
                             <footer>
                                 <ul class="actions">
-                                    <li><a href="https://ai-flashcards-liart.vercel.app/" class="button"
-                                            target="_blank">Join Waitlist</a></li>
+                                    <li><a href="https://github.com/syedtaha22/xv6-llm-book" class="button"
+                                            target="_blank">Get the Book</a></li>
+                                </ul>
+                            </footer>
+                        </section>
+                        <hr />
+
+                        <!-- Content -->
+                        <section id="content">
+                            <h3>Kaggle Competition: Safe Driver Prediction - 1st Place</h3>
+                            <p>
+                                Achieved <strong>1st place</strong> (Private Leaderboard AUROC: 0.64671) in the Enhanced Safe Driver 
+                                Prediction Kaggle competition by developing a stacking ensemble of gradient boosting models 
+                                (<strong>XGBoost</strong>, <strong>LightGBM</strong>, <strong>CatBoost</strong>) with a logistic 
+                                regression meta-learner.
+                            </p>
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>Outperformed 100+ competitors through systematic model evaluation and comprehensive data exploration.</li>
+                                <li>Developed refined preprocessing strategy handling extensive missing data and non-predictive features.</li>
+                                <li>Demonstrated expertise in ensemble methods, feature engineering, and highly imbalanced tabular data.</li>
+                            </ul>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="https://www.kaggle.com/competitions/enhanced-safe-driver-prediction-challenge/" class="button"
+                                            target="_blank">View Competition</a></li>
+                                </ul>
+                            </footer>
+                        </section>
+                        <hr />
+
+                        <!-- Content -->
+                        <section id="content">
+                            <h3>Modular 2D Physics & Orbital Mechanics Engine</h3>
+                            <p>
+                                Architected and built a modular 2D physics engine from scratch in <strong>C++</strong>, implementing 
+                                rigid body dynamics, velocity-based movement, and AABB collision detection/resolution. Extended the 
+                                core engine into an orbital mechanics simulation to model gravitational N-body interactions, applying 
+                                vector mathematics and numerical integration.
+                            </p>
+                            <h4>Key Achievements:</h4>
+                            <ul>
+                                <li>Developed a real-time visualization layer using SFML for interactive simulation validation.</li>
+                                <li>Showcases proficiency in low-level system design, physics algorithms, and graphics programming.</li>
+                            </ul>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="https://github.com/syedtaha22/Physics-Engine/" class="button"
+                                            target="_blank">View on GitHub</a></li>
                                 </ul>
                             </footer>
                         </section>
