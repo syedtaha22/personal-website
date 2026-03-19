@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /private/
 Disallow: /temp/
 
-Sitemap: https://www.syedtaha.org/sitemap.xml
+Sitemap: https://www.syedtaha.dev/sitemap.xml
