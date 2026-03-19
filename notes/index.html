@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description"
+        content="Hello! I'm Syed Taha — this is where I write about things I build, figure out, or find interesting. Mostly systems programming, machine learning, and low-level computing.">
+    <meta name="keywords"
+        content="Syed Taha, systems programming, RISC-V, machine learning, low-level computing, high-performance computing, technical writing, notes">
+    <meta name="author" content="Syed Taha">
+
+    <title>Notes - Syed Taha</title>
+
+    <!-- Canonical link tag -->
+    <link rel="canonical" href="/notes/">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2HDCTFNV6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-V2HDCTFNV6');
+    </script>
+
+    <style>
+        /* Hide sidebar on smaller screens */
+        @media (max-width: 980px) {
+            #sidebar {
+                display: none;
+            }
+        }
+
+        /* Override main.css button zero-padding on small screens */
+        @media screen and (max-width: 480px) {
+            #pagination .button {
+                padding-left: 1.5em !important;
+                padding-right: 1.5em !important;
+            }
+            .post-content .button,
+            #posts-container .button {
+                padding-left: 1.5em !important;
+                padding-right: 1.5em !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1 id="logo"><a href="/">Syed Taha</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/hobbies-and-interests.html">Hobbies</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>Notes</h2>
+                    <p>Things I've built, learned, or figured out along the way.</p>
+                </header>
+
+                <div class="row gtr-150">
+                    <!-- Left Sidebar -->
+                    <div class="col-4 col-12-medium">
+                        <section id="sidebar">
+                            <!-- Featured Posts -->
+                            <section>
+                                <h3>Featured</h3>
+                                <div id="featured-posts"></div>
+                            </section>
+                            <hr />
+
+                            <!-- Categories -->
+                            <section>
+                                <h3>Categories</h3>
+                                <ul id="categories-list" style="list-style: none; padding: 0;">
+                                </ul>
+                            </section>
+                            <hr />
+
+                            <!-- Tags Cloud -->
+                            <section>
+                                <h3>Tags</h3>
+                                <div id="tags-cloud"></div>
+                            </section>
+                        </section>
+                    </div>
+
+                    <!-- Main Content - List of notes -->
+                    <div class="col-8 col-12-medium imp-medium">
+                        <section id="content">
+                            <div id="posts-container"></div>
+
+                            <!-- Pagination -->
+                            <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 30px;">
+                                <button id="prev-btn" class="button" style="cursor: pointer;" disabled>&larr; Previous</button>
+                                <span id="page-info" style="font-weight: bold;"></span>
+                                <button id="next-btn" class="button" style="cursor: pointer;">Next &rarr;</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://www.instagram.com/syedtaha22/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/in/syetaha/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/syedtaha22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="mailto:syetaha@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Syed Taha. All rights reserved.</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/notes.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" id="meta-description"
+        content="A note by Syed Taha.">
+    <meta name="keywords" id="meta-keywords"
+        content="Syed Taha, systems programming, machine learning, technical writing">
+    <meta name="author" content="Syed Taha">
+
+    <title id="page-title">Note</title>
+
+    <!-- Canonical link tag -->
+    <link rel="canonical" id="canonical-link" href="/notes/post.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- Favicon links -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicons/favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2HDCTFNV6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-V2HDCTFNV6');
+    </script>
+
+    <style>
+        /* Minimal structural styling only - colors inherit from default theme */
+        .post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+
+        .post-meta span:not(:last-child)::after {
+            content: " |";
+            margin-left: 1rem;
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            justify-content: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .tag:hover {
+            opacity: 0.8;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+        }
+
+        .post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .post-content table th,
+        .post-content table td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .post-content table th {
+            font-weight: bold;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin: 1rem 0;
+            margin-left: 1.5rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        #toc-sidebar {
+            position: sticky;
+            top: 2rem;
+        }
+
+        #toc-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ddd;
+        }
+
+        #toc-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #toc-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        #toc-content a {
+            color: #007acc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.3rem 0;
+            transition: color 0.2s;
+        }
+
+        #toc-content a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        #toc-content ul ul {
+            margin-left: 1.2rem;
+            margin-top: 0.3rem;
+        }
+
+        #toc-content > ul > li {
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        #toc-content > ul > li ul a {
+            font-weight: normal;
+        }
+
+        /* Hide sidebar on medium and smaller screens */
+        @media screen and (max-width: 1024px) {
+            #toc-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1 id="logo"><a href="/">Syed Taha</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/hobbies-and-interests.html">Hobbies</a></li>
+                    <li><a href="/notes/" class="button primary">Notes</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <!-- Post Header -->
+                <header class="major">
+                    <h2 id="post-title"></h2>
+                    <p id="post-excerpt"></p>
+                    <div class="post-meta">
+                        <span><span id="post-author"></span></span>
+                        <span><span id="post-date"></span></span>
+                        <span><span id="post-category"></span></span>
+                        <span><span id="post-readtime"></span> mins</span>
+                    </div>
+                    <div class="post-tags" id="post-tags-container"></div>
+                </header>
+
+                <div class="row gtr-150">
+                    <!-- Content (Left Column) -->
+                    <div class="col-8 col-12-medium">
+                        <!-- Featured Image -->
+                        <div id="featured-image-container"></div>
+
+                        <!-- Post Content -->
+                        <section id="content">
+                            <article class="post-content" id="post-content"></article>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar (Right Column) -->
+                    <div class="col-4 col-12-medium">
+                        <section id="toc-sidebar">
+                            <div id="toc-title">Table of Contents</div>
+                            <div id="toc-content"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://www.instagram.com/syedtaha22/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/in/syetaha/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/syedtaha22" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="mailto:syetaha@gmail.comg" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Syed Taha. All rights reserved.</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.dropotron.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/notes.js"></script>
+
+</body>
+
+</html>
