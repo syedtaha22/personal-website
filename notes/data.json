@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "RISC-V Development Environment Setup and Usage Guide",
+      "date": "2025-07-29",
+      "author": "Syed Taha",
+      "excerpt": "A guide to setting up RISC-V development environment using WSL, installing the VeeR-ISS simulator, RISC-V GNU toolchain, and compiling/running RISC-V code with analysis tools.",
+      "category": "Systems",
+      "tags": ["RISC-V", "Development Setup", "WSL", "VeeR-ISS", "GNU Toolchain", "Assembly", "Simulator"],
+      "filename": "1-riscv-env-setup.md",
+      "featured_image": null,
+      "readTime": 6,
+      "status": "published"
+    },
+    {
+      "id": 2,
+      "title": "Winning Solution for the Enhanced Safe Driver Prediction Challenge",
+      "date": "2025-11-03",
+      "author": "Syed Taha",
+      "excerpt": "1st place solution using a stacking ensemble of XGBoost, LightGBM, and CatBoost with targeted preprocessing and meta-learning to predict insurance claims. Achieved 0.64671 Private AUROC.",
+      "category": "Machine Learning",
+      "tags": ["XGBoost", "LightGBM", "CatBoost", "Ensemble Learning", "Stacking", "Insurance", "Classification", "Feature Engineering"],
+      "filename": "2-enhanched-safe-drive-prediction.md",
+      "featured_image": null,
+      "readTime": 2,
+      "status": "published"
+    }
+  ],
+  "postsPerPage": 5,
+  "totalPosts": 2
+}
