@@ -32,7 +32,7 @@
  *       "tags": ["..."],
  *       "excerpt": "...",
  *       "filename": "1-post-slug.md",
- *       "featured_image": "images/post-1/cover.png",  // optional
+ *       "featured_image": "images/post-1/cover.webp",  // optional
  *       "author": "...",
  *       "readTime": 5
  *     },
