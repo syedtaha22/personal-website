@@ -2637,7 +2637,7 @@ input[type="radio"]+label:before {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-image: url("images/overlay.png");
+	/* background-image: url("images/overlay.png"); */
 	width: 100%;
 	height: 100%;
 	z-index: 1;
@@ -3175,7 +3175,7 @@ input[type="button"]:disabled,
 }
 
 .spotlight:before {
-	background-image: url("images/overlay.png");
+	/* background-image: url("images/overlay.png"); */
 	content: '';
 	display: block;
 	height: 100%;
@@ -3582,7 +3582,7 @@ body.landing #header {
 #banner {
 	background-attachment: fixed;
 	background-color: #0d1117;
-	background-image: url("../../images/banner.png");
+	background-image: url("images/banner.webp");
 	background-position: center center;
 	background-size: cover;
 	box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3601,13 +3601,13 @@ body.landing #header {
 }
 
 #banner:after {
-	background-image: -moz-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
+	background-image: -moz-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)) /* url("images/overlay.png") */;
 	;
-	background-image: -webkit-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
+	background-image: -webkit-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)) /* url("images/overlay.png") */;
 	;
-	background-image: -ms-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
+	background-image: -ms-linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)) /* url("images/overlay.png") */;
 	;
-	background-image: linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)), url("images/overlay.png");
+	background-image: linear-gradient(top, rgba(13, 17, 23, 0.95), rgba(13, 17, 23, 0.95)) /* url("images/overlay.png") */;
 	;
 	content: '';
 	display: block;
