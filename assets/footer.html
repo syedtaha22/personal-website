@@ -1,0 +1,36 @@
+<!--
+@file footer.html
+@brief Reusable footer component injected into all pages via components.js
+
+@details This file contains the site-wide footer markup. It's loaded dynamically
+by the components.js script and injected into placeholder divs throughout the site.
+
+Why this approach?
+- Single source of truth: Edit footer once, all pages update automatically
+- No duplication: Eliminates copy-paste maintenance burden
+- Easy updates: Change social links, copyright year, etc. in one place
+
+How to use:
+1. Create a placeholder in HTML: <div id="component-footer"></div>
+2. Include the loader script: <script src="/assets/js/components.js"></script>
+3. When the page loads, components.js automatically finds the placeholder and
+   fetches this file, injecting the footer HTML into the placeholder div.
+
+The footer contains:
+- Social media links (LinkedIn, Instagram, GitHub, Email)
+- Copyright notice
+- FontAwesome icon classes for styling
+-->
+
+<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		<li><a href="https://www.linkedin.com/in/syetaha/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+		<li><a href="https://www.instagram.com/syedtaha22/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+		<li><a href="https://github.com/syedtaha22" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+		<li><a href="mailto:syetaha@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+	</ul>
+	<ul class="copyright">
+		<li>&copy; Syed Taha. All rights reserved.</li>
+	</ul>
+</footer>
