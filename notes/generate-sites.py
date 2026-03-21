@@ -37,6 +37,10 @@ COMMON_HEAD = """\
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="author" content="Syed Taha">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css" />
@@ -58,15 +62,15 @@ COMMON_HEAD = """\
     </script>"""
 
 COMMON_SCRIPTS = """\
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.scrolly.min.js"></script>
-    <script src="../assets/js/jquery.dropotron.min.js"></script>
-    <script src="../assets/js/jquery.scrollex.min.js"></script>
-    <script src="../assets/js/browser.min.js"></script>
-    <script src="../assets/js/breakpoints.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="/assets/js/components.js"></script>"""
+    <script defer src="../assets/js/jquery.min.js"></script>
+    <script defer src="../assets/js/jquery.scrolly.min.js"></script>
+    <script defer src="../assets/js/jquery.dropotron.min.js"></script>
+    <script defer src="../assets/js/jquery.scrollex.min.js"></script>
+    <script defer src="../assets/js/browser.min.js"></script>
+    <script defer src="../assets/js/breakpoints.min.js"></script>
+    <script defer src="../assets/js/util.js"></script>
+    <script defer src="../assets/js/main.js"></script>
+    <script defer src="/assets/js/components.js"></script>"""
 
 
 def _h(value: str) -> str:
@@ -384,8 +388,8 @@ class Generator:
 
 {COMMON_SCRIPTS}
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="js/post.js" data-filename="{post.filename}"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="js/post.js" data-filename="{post.filename}"></script>
 
 </body>
 
@@ -488,7 +492,7 @@ class Generator:
 
 {COMMON_SCRIPTS}
 
-    <script src="js/index.js"></script>
+    <script defer src="js/index.js"></script>
 
 </body>
 
