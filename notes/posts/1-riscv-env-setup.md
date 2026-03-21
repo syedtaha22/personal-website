@@ -183,6 +183,14 @@ The RISC-V GNU toolchain provides the necessary compilers, assemblers, and linke
 
 This section describes how to compile and execute RISC-V code using this repository.
 
+First, clone the starter repo.
+
+```bash
+cd ~
+git clone https://github.com/syedtaha22/riscv-env-setup.git
+cd riscv-env-setup
+```
+
 The repo has the following structure:
 
 ```
