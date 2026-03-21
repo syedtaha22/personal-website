@@ -4,22 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description"
-        content="Hello! I'm Syed Taha — this is where I write about things I build, figure out, or find interesting. Mostly systems programming, machine learning, and low-level computing.">
-    <meta name="keywords"
-        content="Syed Taha, systems programming, RISC-V, machine learning, low-level computing, high-performance computing, technical writing, notes">
     <meta name="author" content="Syed Taha">
-
-    <title>Notes - Syed Taha</title>
-
-    <!-- Canonical link tag -->
-    <link rel="canonical" href="/notes/">
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/notes.css" />
 
-    <!-- Favicon links -->
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.webp">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.webp">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicons/favicon-48x48.webp">
@@ -27,42 +18,23 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.webp">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.webp">
 
-    <!-- Google Analytics (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2HDCTFNV6"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag() {{ dataLayer.push(arguments); }}
         gtag('js', new Date());
         gtag('config', 'G-V2HDCTFNV6');
     </script>
 
-    <style>
-        /* Hide sidebar on smaller screens */
-        @media (max-width: 980px) {
-            #sidebar {
-                display: none;
-            }
-        }
-
-        /* Override main.css button zero-padding on small screens */
-        @media screen and (max-width: 480px) {
-            #pagination .button {
-                padding-left: 1.5em !important;
-                padding-right: 1.5em !important;
-            }
-            .post-content .button,
-            #posts-container .button {
-                padding-left: 1.5em !important;
-                padding-right: 1.5em !important;
-            }
-        }
-    </style>
+    <title>Notes - Syed Taha</title>
+    <meta name="description" content="Hello! I'm Syed Taha — this is where I write about things I build, figure out, or find interesting. Mostly systems programming, machine learning, and low-level computing.">
+    <meta name="keywords" content="Syed Taha, systems programming, RISC-V, machine learning, low-level computing, high-performance computing, technical writing, notes">
+    <link rel="canonical" href="https://syedtaha.dev/notes/">
 </head>
 
 <body class="is-preload">
     <div id="page-wrapper">
 
-        <!-- Header -->
         <header id="header">
             <h1 id="logo"><a href="/">Syed Taha</a></h1>
             <nav id="nav">
@@ -74,7 +46,6 @@
             </nav>
         </header>
 
-        <!-- Main -->
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
@@ -83,25 +54,19 @@
                 </header>
 
                 <div class="row gtr-150">
-                    <!-- Left Sidebar -->
+                    <!-- Sidebar — populated at runtime by index.js -->
                     <div class="col-4 col-12-medium">
                         <section id="sidebar">
-                            <!-- Featured Posts -->
                             <section>
                                 <h3>Featured</h3>
                                 <div id="featured-posts"></div>
                             </section>
                             <hr />
-
-                            <!-- Categories -->
                             <section>
                                 <h3>Categories</h3>
-                                <ul id="categories-list" style="list-style: none; padding: 0;">
-                                </ul>
+                                <ul id="categories-list" style="list-style: none; padding: 0;"></ul>
                             </section>
                             <hr />
-
-                            <!-- Tags Cloud -->
                             <section>
                                 <h3>Tags</h3>
                                 <div id="tags-cloud"></div>
@@ -109,16 +74,54 @@
                         </section>
                     </div>
 
-                    <!-- Main Content - List of notes -->
+                    <!-- Post list — cards pre-rendered by this script -->
                     <div class="col-8 col-12-medium imp-medium">
                         <section id="content">
-                            <div id="posts-container"></div>
+                            <div id="posts-container">
 
-                            <!-- Pagination -->
-                            <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 30px;">
-                                <button id="prev-btn" class="button" style="cursor: pointer;" disabled>&larr; Previous</button>
-                                <span id="page-info" style="font-weight: bold;"></span>
-                                <button id="next-btn" class="button" style="cursor: pointer;">Next &rarr;</button>
+            <article style="margin-bottom:2rem;padding:0 1rem 2rem 1rem;border-bottom:1px solid #ddd;">
+                
+                <h3>
+                    <a href="/notes/enhanched-safe-drive-prediction.html" style="color:inherit;text-decoration:none;">
+                        Winning Solution for the Enhanced Safe Driver Prediction Challenge
+                    </a>
+                </h3>
+                <div style="font-size:0.9rem;color:#666;margin-bottom:0.5rem;
+                            display:flex;flex-wrap:wrap;gap:0;align-items:center;">
+                    <span>November 3, 2025</span>
+                    <span style="margin:0 0.5rem;">|</span>
+                    <span><strong>Machine Learning</strong></span>
+                    <span style="margin:0 0.5rem;">|</span>
+                    <span>2 min read</span>
+                </div>
+                <p>1st place solution using a stacking ensemble of XGBoost, LightGBM, and CatBoost with targeted preprocessing and meta-learning to predict insurance claims. Achieved 0.64671 Private AUROC.</p>
+                <a href="/notes/enhanched-safe-drive-prediction.html" class="button small">Read More</a>
+            </article>
+            <article style="margin-bottom:2rem;padding:0 1rem 2rem 1rem;border-bottom:1px solid #ddd;">
+                
+                <h3>
+                    <a href="/notes/riscv-env-setup.html" style="color:inherit;text-decoration:none;">
+                        RISC-V Development Environment Setup and Usage Guide
+                    </a>
+                </h3>
+                <div style="font-size:0.9rem;color:#666;margin-bottom:0.5rem;
+                            display:flex;flex-wrap:wrap;gap:0;align-items:center;">
+                    <span>July 29, 2025</span>
+                    <span style="margin:0 0.5rem;">|</span>
+                    <span><strong>Systems</strong></span>
+                    <span style="margin:0 0.5rem;">|</span>
+                    <span>6 min read</span>
+                </div>
+                <p>A guide to setting up RISC-V development environment using WSL, installing the VeeR-ISS simulator, RISC-V GNU toolchain, and compiling/running RISC-V code with analysis tools.</p>
+                <a href="/notes/riscv-env-setup.html" class="button small">Read More</a>
+            </article>
+                            </div>
+
+                            <!-- Pagination wired up by index.js -->
+                            <div id="pagination" style="display:flex;justify-content:center;align-items:center;gap:15px;margin-top:30px;">
+                                <button id="prev-btn" class="button" style="cursor:pointer;" disabled>&larr; Previous</button>
+                                <span id="page-info" style="font-weight:bold;"></span>
+                                <button id="next-btn" class="button" style="cursor:pointer;">Next &rarr;</button>
                             </div>
                         </section>
                     </div>
@@ -126,12 +129,10 @@
             </div>
         </div>
 
-        <!-- Component: Footer -->
         <div id="component-footer"></div>
 
     </div>
 
-    <!-- Scripts -->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/jquery.scrolly.min.js"></script>
     <script src="../assets/js/jquery.dropotron.min.js"></script>
@@ -140,13 +141,9 @@
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
-
-    <!-- Marked.js for Markdown Rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <!-- JavaScript -->
-    <script src="js/notes.js"></script>
     <script src="/assets/js/components.js"></script>
+
+    <script src="js/index.js"></script>
 
 </body>
 
