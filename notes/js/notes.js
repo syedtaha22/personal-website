@@ -385,6 +385,25 @@ class PostPage {
         document.getElementById('meta-keywords').content = post.tags.join(', ');
         document.getElementById('canonical-link').href = `/notes/post.html?id=${postId}`;
 
+        // --- Open Graph tags for link previews ---
+        const ogTitle = document.getElementById('og-title');
+        const ogDescription = document.getElementById('og-description');
+        const ogImage = document.getElementById('og-image');
+        const ogUrl = document.getElementById('og-url');
+
+        if (ogTitle) ogTitle.content = `${post.title} - Syed Taha's Notes`;
+        if (ogDescription) ogDescription.content = post.excerpt;
+        if (ogUrl) ogUrl.content = `https://syedtaha.dev/notes/post.html?id=${postId}`;
+
+        // Use featured image if available, otherwise use default nebula image
+        if (ogImage) {
+            if (post.featured_image) {
+                ogImage.content = `https://syedtaha.dev/notes/${post.featured_image}`;
+            } else {
+                ogImage.content = 'https://syedtaha.dev/images/nebula-3d-render-1.webp';
+            }
+        }
+
         // --- Post header fields ---
         document.getElementById('post-title').textContent = post.title;
         document.getElementById('post-excerpt').textContent = post.excerpt;
