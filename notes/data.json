@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "RISC-V Development Environment Setup and Usage Guide",
-      "date": "2025-07-29",
+      "date": "2026-03-29",
       "author": "Syed Taha",
       "excerpt": "A guide to setting up RISC-V development environment using WSL, installing the VeeR-ISS simulator, RISC-V GNU toolchain, and compiling/running RISC-V code with analysis tools.",
       "category": "Systems",

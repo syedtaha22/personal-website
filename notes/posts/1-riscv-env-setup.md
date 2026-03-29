@@ -22,7 +22,6 @@ sudo apt install git
 Before installing the RISC-V simulator and toolchain, you need to install several development libraries and tools. Open your WSL terminal and execute the following commands:
 
 ```bash
-sudo apt update
 sudo apt install make autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libboost-all-dev g++-11
 ```
 
@@ -117,13 +116,25 @@ The RISC-V GNU toolchain provides the necessary compilers, assemblers, and linke
     cd riscv-gnu-toolchain
     ```
 
-2.  **Initialize Submodules:**
+3.  **Configure and Build:**
 
     ```bash
-    git submodule update --init --recursive
+    mkdir build
+    sed -i 's/\r$//' configure      # Fix issues regarding windows line endings
+    ./configure --prefix=/opt/riscv32imfcv --with-arch=rv32imfcv --with-abi=ilp32f
     ```
 
-    It's completely normal for this command to take a while. So stop panicking. Take a coffee break. Touch grass, maybe.
+      * `--prefix=/opt/riscv32imfcv`: Specifies the installation directory for the toolchain.
+      * `--with-arch=rv32imfcv`: Configures the toolchain for the RV32IMFCV architecture (32-bit integer, multiply/divide, atomic, single-precision float, compressed, and vector extensions).
+      * `--with-abi=ilp32f`: Sets the ABI (Application Binary Interface) to ILP32F.
+
+    Then run 
+
+    ```bash
+    sudo make
+    ```
+
+    It's completely normal for this to take a while. So stop panicking. Take a coffee break. Touch grass, maybe.
 
     *Note*: You might encounter an error while running this command, similar to the following:
 
@@ -139,7 +150,6 @@ The RISC-V GNU toolchain provides the necessary compilers, assemblers, and linke
     So it's safe to remove it and proceed:
 
     ```bash
-    
     git submodule deinit -f dejagnu
     git rm -f dejagnu
     rm -rf .git/modules/dejagnu
@@ -147,25 +157,11 @@ The RISC-V GNU toolchain provides the necessary compilers, assemblers, and linke
     git commit -m "Removed dejagnu"
     ```
 
-    Then re-run the submodule initialization:
+    Then re run
 
     ```bash
-    git submodule update --init --recursive
-    ```
-
-    This will skip the broken submodule and allow the remaining components to be fetched and prepared correctly.
-
-3.  **Configure and Build:**
-
-    ```bash
-    mkdir build
-    ./configure --prefix=/opt/riscv32imfcv --with-arch=rv32imfcv --with-abi=ilp32f
     sudo make
     ```
-
-      * `--prefix=/opt/riscv32imfcv`: Specifies the installation directory for the toolchain.
-      * `--with-arch=rv32imfcv`: Configures the toolchain for the RV32IMFCV architecture (32-bit integer, multiply/divide, atomic, single-precision float, compressed, and vector extensions).
-      * `--with-abi=ilp32f`: Sets the ABI (Application Binary Interface) to ILP32F.
 
 4.  **Add to PATH:**
     Add the toolchain's binary directory to your system's PATH so you can easily invoke RISC-V specific commands.
@@ -333,20 +329,6 @@ Examples:
   ./count_vec.sh -d riscv-output
   ./count_vec.sh -f riscv-output/main.s
 ```
-
-**Examples:**
-
-  * **Scan a directory for assembly files:**
-
-    ```bash
-    ./count_vec.sh -d build/asm
-    ```
-
-  * **Scan a single assembly file:**
-
-    ```bash
-    ./count_vec.sh -f build/asm/sample.s
-    ```
 
 ### Sample Output
 
