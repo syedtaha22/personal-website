@@ -116,7 +116,7 @@ The RISC-V GNU toolchain provides the necessary compilers, assemblers, and linke
     cd riscv-gnu-toolchain
     ```
 
-3.  **Configure and Build:**
+2.  **Configure and Build:**
 
     ```bash
     mkdir build
@@ -163,7 +163,7 @@ The RISC-V GNU toolchain provides the necessary compilers, assemblers, and linke
     sudo make
     ```
 
-4.  **Add to PATH:**
+3.  **Add to PATH:**
     Add the toolchain's binary directory to your system's PATH so you can easily invoke RISC-V specific commands.
 
     ```bash
