@@ -1,7 +1,7 @@
 """
 generate-sites.py
 =================
-Static site generator for the /notes section.
+Static site generator for the /blog section.
 
 Reads data.json and generates one .html file per post plus a rendered
 index.html. All page templates are defined in this script — no external
@@ -107,7 +107,7 @@ class Post:
     read_time : int
         Estimated reading time in minutes.
     featured_image : str or None
-        Relative path from the notes root, e.g. ``images/post-1/cover.webp``.
+        Relative path from the blog root, e.g. ``images/post-1/cover.webp``.
     slug : str
         URL slug derived from the filename, e.g. ``riscv-env-setup``.
     """
@@ -131,21 +131,25 @@ class Post:
     @property
     def url(self) -> str:
         """Absolute URL to the generated static page."""
-        return f"{SITE_BASE_URL}/notes/{self.slug}.html"
+        return f"{SITE_BASE_URL}/blog/{self.slug}.html"
 
     @property
     def formatted_date(self) -> str:
-        """Human-readable date string, e.g. ``November 3, 2025``."""
+        """Human-readable date string, e.g. ``March 29, 2026``."""
         try:
-            return datetime.strptime(self.date, "%Y-%m-%d").strftime("%B %-d, %Y")
+            dt = datetime.strptime(self.date, "%Y-%m-%d")
+            day = dt.day  # Raw integer, no zero-padding
+            month = dt.strftime("%B")
+            year = dt.year
+            return f"{month} {day}, {year}"
         except ValueError:
-            return self.date  # fall back to raw string if parsing fails
+            return self.date
 
     @property
     def og_image(self) -> str:
         """Open Graph image URL — featured image if set, else the placeholder."""
         if self.featured_image:
-            return f"{SITE_BASE_URL}/notes/{self.featured_image}"
+            return f"{SITE_BASE_URL}/blog/{self.featured_image}"
         return f"{SITE_BASE_URL}/images/note-preview-ph.webp"
 
     @property
@@ -165,7 +169,7 @@ class Post:
             return ""
         return (
             f'<a href="#" class="image fit">'
-            f'<img src="/notes/{_ha(self.featured_image)}" alt="{_ha(self.title)}" />'
+            f'<img src="/blog/{_ha(self.featured_image)}" alt="{_ha(self.title)}" />'
             f'</a>'
         )
 
@@ -179,13 +183,13 @@ class Post:
             An ``<article>`` HTML string ready for injection into
             ``#posts-container``.
         """
-        post_url = f"/notes/{self.slug}.html"
+        post_url = f"/blog/{self.slug}.html"
 
         img_block = ""
         if self.featured_image:
             img_block = (
                 f'<a href="{post_url}" class="image fit" style="display:block;margin-bottom:1rem;">'
-                f'<img src="/notes/{_ha(self.featured_image)}" alt="{_ha(self.title)}" '
+                f'<img src="/blog/{_ha(self.featured_image)}" alt="{_ha(self.title)}" '
                 f'style="width:100%;height:auto;border-radius:5px;"></a>'
             )
 
@@ -212,7 +216,7 @@ class Post:
 
 class Generator:
     """
-    Builds static HTML files for the notes section.
+    Builds static HTML files for the blog section.
 
     Parameters
     ----------
@@ -281,7 +285,7 @@ class Generator:
 
     def clean(self) -> None:
         """
-        Delete all previously generated .html files from the notes root.
+        Delete all previously generated .html files from the blog root.
 
         Only removes files that correspond to a known post slug or
         ``index.html`` — does not touch any other files.
@@ -344,7 +348,7 @@ class Generator:
                     <li><a href="/">Home</a></li>
                     <li><a href="/projects.html">Projects</a></li>
                     <li><a href="/outside.html">Outside</a></li>
-                    <li><a href="/notes/" class="button primary">Notes</a></li>
+                    <li><a href="/blog/" class="button primary">My Blog</a></li>
                 </ul>
             </nav>
         </header>
@@ -419,17 +423,21 @@ class Generator:
 <head>
 {COMMON_HEAD}
 
-    <title>Notes - Syed Taha</title>
+    <title>Blog - Syed Taha</title>
     <meta name="description" content="Hello! I'm Syed Taha — this is where I write about things I build, figure out, or find interesting. Mostly systems programming, machine learning, and low-level computing.">
-    <meta name="keywords" content="Syed Taha, systems programming, RISC-V, machine learning, low-level computing, high-performance computing, technical writing, notes">
-    <link rel="canonical" href="{SITE_BASE_URL}/notes/">
+    <meta name="keywords" content="Syed Taha, systems programming, RISC-V, machine learning, low-level computing, high-performance computing, technical writing, blog">
+    <link rel="canonical" href="{SITE_BASE_URL}/blog/">
 </head>
 
 <body class="is-preload">
     <div id="page-wrapper">
 
         <header id="header">
-            <h1 id="logo"><a href="/">Syed Taha</a></h1>
+            <h1 id="logo" style="display:flex; gap:1.5rem; align-items:center; padding-left:0.5rem;">
+                <a href="https://github.com/syedtaha22" class="icon brands fa-github" title="GitHub"><span class="label">GitHub</span></a>
+                <a href="https://www.linkedin.com/in/syetaha/" class="icon brands fa-linkedin-in" title="LinkedIn"><span class="label">LinkedIn</span></a>
+                <a href="/syedtaha.pdf" class="icon solid fa-file-pdf" title="Resume"><span class="label">Resume</span></a>
+            </h1>
             <nav id="nav">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -442,7 +450,7 @@ class Generator:
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
-                    <h2>Notes</h2>
+                    <h2>My Blog</h2>
                     <p>Things I've built, learned, or figured out along the way.</p>
                 </header>
 
@@ -543,7 +551,7 @@ def build_cli() -> argparse.ArgumentParser:
         Configured parser with all supported flags and arguments.
     """
     parser = argparse.ArgumentParser(
-        description="Static site generator for the /notes section.",
+        description="Static site generator for the /blog section.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Examples:\n"

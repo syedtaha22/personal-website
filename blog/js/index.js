@@ -1,7 +1,7 @@
 /**
  * @file index.js
  * @brief Sidebar population, pagination, and filtering for the static
- *        notes index page.
+ *        index page.
  *
  * @details Post cards are pre-rendered into the HTML by generate-sites.py,
  * so this file does not render the main post list. It handles:
@@ -37,21 +37,21 @@
  * @brief Derives the absolute URL for a post from its markdown filename.
  *
  * @details Strips the leading numeric prefix and .md extension to produce
- * a slug, then builds an absolute /notes/ path. Mirrors slug_from_filename()
+ * a slug, then builds an absolute /blog/ path. Mirrors slug_from_filename()
  * in generate-sites.py so URLs always match the generated files.
  *
  * @param {string} filename - Markdown filename from data.json (e.g. "1-riscv-env-setup.md").
- * @returns {string} Absolute URL to the static post page (e.g. "/notes/riscv-env-setup.html").
+ * @returns {string} Absolute URL to the static post page (e.g. "/blog/riscv-env-setup.html").
  *
  * @example
- * postUrl("1-riscv-env-setup.md")  // -> "/notes/riscv-env-setup.html"
- * postUrl("10-some-post.md")       // -> "/notes/some-post.html"
+ * postUrl("1-riscv-env-setup.md")  // -> "/blog/riscv-env-setup.html"
+ * postUrl("10-some-post.md")       // -> "/blog/some-post.html"
  */
 function postUrl(filename) {
     const slug = filename
         .replace(/\.md$/, '')   // Drop .md extension
         .replace(/^\d+-/, '');  // Drop leading "N-" numeric prefix
-    return `/notes/${slug}.html`;
+    return `/blog/${slug}.html`;
 }
 
 
@@ -80,7 +80,7 @@ class PostCard {
             <article style="margin-bottom: 2rem; padding: 0 1rem 2rem 1rem; border-bottom: 1px solid #ddd;">
                 ${post.featured_image ? `
                     <a href="${url}" class="image fit" style="display: block; margin-bottom: 1rem;">
-                        <img src="/notes/${post.featured_image}" alt="${post.title}"
+                        <img src="/blog/${post.featured_image}" alt="${post.title}"
                              style="width: 100%; height: auto; border-radius: 5px;">
                     </a>
                 ` : ''}
@@ -164,14 +164,14 @@ class IndexPage {
         prevBtn.onclick = () => {
             if (this.currentPage > 1) {
                 this.currentPage--;
-                window.location.href = `/notes/?page=${this.currentPage}`;
+                window.location.href = `/blog/?page=${this.currentPage}`;
             }
         };
 
         nextBtn.onclick = () => {
             if (this.currentPage < totalPages) {
                 this.currentPage++;
-                window.location.href = `/notes/?page=${this.currentPage}`;
+                window.location.href = `/blog/?page=${this.currentPage}`;
             }
         };
     }
@@ -336,7 +336,7 @@ class IndexPage {
 
         // Append a button to reset the filter and return to the full index
         const clearBtn = document.createElement('div');
-        clearBtn.innerHTML = `<a href="/notes/" class="button">Clear Filter</a>`;
+        clearBtn.innerHTML = `<a href="/blog/" class="button">Clear Filter</a>`;
         container.appendChild(clearBtn);
     }
 }
@@ -362,7 +362,7 @@ let indexPage = null;
  */
 document.addEventListener('DOMContentLoaded', async function () {
     try {
-        const response = await fetch('/notes/data.json');
+        const response = await fetch('/blog/data.json');
         const data = await response.json();
 
         // Sort all posts by date descending once, upfront

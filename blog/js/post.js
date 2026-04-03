@@ -91,9 +91,9 @@ function renderTOC() {
      * @brief Entry point — runs after the DOM is ready.
      *
      * @details Reads the markdown filename from this script tag's
-     * data-filename attribute, fetches the file from /notes/posts/,
+     * data-filename attribute, fetches the file from /blog/posts/,
      * strips the leading h1 (already rendered in the page header),
-     * renders via marked.js, then calls renderTOC() from notes-utils.js.
+     * renders via marked.js, then calls renderTOC().
      *
      * @returns {Promise<void>}
      */
@@ -113,10 +113,13 @@ function renderTOC() {
         const contentEl = document.getElementById('post-content');
 
         try {
-            const response = await fetch(`/notes/posts/${filename}`);
+            const response = await fetch(`/blog/posts/${filename}`);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
             let markdown = await response.text();
+
+            // Normalize line endings (CRLF → LF) to ensure consistent regex matching
+            markdown = markdown.replace(/\r\n/g, '\n');
 
             // Strip the leading h1 — it's already rendered as the page title
             markdown = markdown.replace(/^# .+\n\n/, '');
