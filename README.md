@@ -1,4 +1,4 @@
-# [syedtaha.dev](https://syedtaha.dev)
+# About
 
 Source for my personal website. Built with plain HTML/CSS/JS, hosted on GitHub Pages.
 
